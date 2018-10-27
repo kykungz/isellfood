@@ -15,7 +15,7 @@ const routes = [
   {
     path: '/',
     exact: true,
-    component: Stats,
+    component: Menu,
   },
   {
     path: '/menu',

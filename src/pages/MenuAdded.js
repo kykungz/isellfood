@@ -54,21 +54,21 @@ class MenuAdded extends React.PureComponent {
             title: 'ผัดไทยกุ้งสด',
             price: '55'
           },
-          {
-            image: null,
-            title: 'ผัดซีอิ๊ว',
-            price: '45'
-          },
-          {
-            image: null,
-            title: 'ผัดขี้เมาทะเล',
-            price: '60'
-          },
-          {
-            image: null,
-            title: 'สปาเก็ตตี้ต้มยำ',
-            price: '60'
-          }
+          // {
+          //   image: null,
+          //   title: 'ผัดซีอิ๊ว',
+          //   price: '45'
+          // },
+          // {
+          //   image: null,
+          //   title: 'ผัดขี้เมาทะเล',
+          //   price: '60'
+          // },
+          // {
+          //   image: null,
+          //   title: 'สปาเก็ตตี้ต้มยำ',
+          //   price: '60'
+          // }
         ]
       })
     }, 500)
