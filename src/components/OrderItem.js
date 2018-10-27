@@ -21,6 +21,18 @@ const Container = styled.div`
       opacity: 1;
     }
   }
+
+  &.removing {
+    animation: Fadeout 0.8s;
+  }
+  @keyframes Fadeout {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
 `
 
 const Padding = styled.div`
@@ -63,7 +75,7 @@ const Color = styled.div`
 class OrderItem extends React.PureComponent {
   render() {
     return (
-      <Container>
+      <Container className={this.props.removing ? 'removing' : ''}>
         <div className="p-2 pr-3">
           <h4 className="p-2 mb-0 pb-0 d-flex justify-content-between align-items-center">
             <div>#{this.props.orderNum}</div>

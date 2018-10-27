@@ -141,3 +141,6 @@ input:focus {
     opacity: 1;
   }
 }
+h3.heading {
+    padding-top: 20px;
+}

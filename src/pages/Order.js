@@ -76,6 +76,7 @@ const generateOrder = () => {
 class Order extends React.PureComponent {
   state = {
     orders: [generateOrder()],
+    removingOrderNum: 0
   }
   componentDidMount = () => {
     setInterval(() => {
@@ -92,8 +93,13 @@ class Order extends React.PureComponent {
   }
   onRemove = orderNum => {
     this.setState({
-      orders: this.state.orders.filter(order => order.orderNum !== orderNum),
+      removingOrderNum: orderNum
     })
+    setTimeout(() => {
+      this.setState({
+        orders: this.state.orders.filter(order => order.orderNum !== orderNum),
+      })
+    }, 800)
   }
   render() {
     return (
@@ -101,6 +107,7 @@ class Order extends React.PureComponent {
         {this.state.orders.map(order => (
           <OrderItem
             onRemove={() => this.onRemove(order.orderNum)}
+            removing={order.orderNum === this.state.removingOrderNum}
             {...order}
           />
         ))}

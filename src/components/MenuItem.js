@@ -108,7 +108,7 @@ class MenuItem extends React.Component {
         <Detail>
           <h5>{this.props.title}</h5>
           <h5 className="price">
-            <span>฿ {this.props.price}</span>
+            <span>{this.props.price}บ.</span>
             {this.props.verify && 
               checked
             }
