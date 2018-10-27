@@ -5,9 +5,9 @@ import icons from '../assets/icons'
 import _ from 'lodash'
 
 const Container = styled.div`
-  padding: 1em;
-  > * + * {
-    margin-top: 1em;
+  padding-top: 1px;
+  > * {
+    margin: 1em;
   }
 `
 

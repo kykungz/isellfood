@@ -63,7 +63,7 @@ class App extends Component {
       this.setState({
         splash: false,
       })
-    }, 3000)
+    }, 0)
   }
 
   render() {
@@ -116,30 +116,6 @@ class App extends Component {
                     float: 'left',
                   }}
                 >
-                  <Link to="/menu" className="menu-item">
-                    <img src="/images/icon_menu.png" alt="" />
-                    Menu
-                  </Link>
-                  <Link to="/manage" className="menu-item">
-                    <img
-                      src="/images/icon_store.png"
-                      style={{
-                        marginBottom: 4,
-                      }}
-                      alt=""
-                    />
-                    Stores
-                  </Link>
-                </div>
-                <div
-                  style={{
-                    float: 'right',
-                  }}
-                >
-                  <Link to="/stats" className="menu-item">
-                    <img src="/images/icon_stat.png" alt="" />
-                    Stats
-                  </Link>
                   <Link to="/order" className="menu-item">
                     <img
                       src="/images/icon_order.png"
@@ -150,6 +126,30 @@ class App extends Component {
                       alt=""
                     />
                     Orders
+                  </Link>
+                  <Link to="/menu" className="menu-item">
+                    <img src="/images/icon_menu.png" alt="" />
+                    Menu
+                  </Link>
+                </div>
+                <div
+                  style={{
+                    float: 'right',
+                  }}
+                >
+                  <Link to="/manage" className="menu-item">
+                    <img
+                      src="/images/icon_store.png"
+                      style={{
+                        marginBottom: 4,
+                      }}
+                      alt=""
+                    />
+                    Stores
+                  </Link>
+                  <Link to="/stats" className="menu-item">
+                    <img src="/images/icon_stat.png" alt="" />
+                    Stats
                   </Link>
                 </div>
                 <Link to="/menu-camera" className="capture-button" />

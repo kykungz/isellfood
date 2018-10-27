@@ -8,36 +8,42 @@ const vendors = [
   {
     name: 'Food Panda',
     icon: icons.foodpanda,
+    selected: true,
     details:
       'ในการเชื่อมต่อร้านค้า คุณต้องเสียค่าธรรมเนียม 30% ของราคาอาหารให้กับ Food Panda',
   },
   {
     name: 'Grab Food',
     icon: icons.grab,
+    selected: true,
     details:
       'ในการเชื่อมต่อร้านค้า คุณต้องเสียค่าธรรมเนียม 30% ของราคาอาหารให้กับ Grab Food',
   },
   {
     name: 'LINE Man',
     icon: icons.line,
+    selected: false,
     details:
       'ในการเชื่อมต่อร้านค้า คุณต้องเสียค่าธรรมเนียม 30% ของราคาอาหารให้กับ LINE Man',
   },
   {
     name: 'Skootar',
     icon: icons.skootar,
+    selected: false,
     details:
       'ในการเชื่อมต่อร้านค้า คุณต้องเสียค่าธรรมเนียม 30% ของราคาอาหารให้กับ Skootar',
   },
   {
     name: 'SendRanger',
     icon: icons.ranger,
+    selected: false,
     details:
       'ในการเชื่อมต่อร้านค้า คุณต้องเสียค่าธรรมเนียม 30% ของราคาอาหารให้กับ SendRanger',
   },
   {
     name: 'Lalamove',
     icon: icons.lalamove,
+    selected: false,
     details:
       'ในการเชื่อมต่อร้านค้า คุณต้องเสียค่าธรรมเนียม 30% ของราคาอาหารให้กับ Lalamove',
   },

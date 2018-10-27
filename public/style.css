@@ -114,17 +114,20 @@ input:focus {
 .button {
     display: inline-block;
     padding: 7px 30px;
-    background: #0FD1AC;
+    background: #543492;
     border-radius: 5px;
     color: #fff;
-    font-size: 18px;
+    font-size: 16px;
     margin-bottom: 15px;
     text-decoration: none;
+    border: 0;
 }
 .button:hover,
-.button:visited{
+.button:visited,
+.button:focus{
     color: #fff;
     text-decoration: none;
+    outline: 0;
 }
 .delay-in {
     animation: Fadein 4s;

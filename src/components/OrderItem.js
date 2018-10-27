@@ -33,6 +33,10 @@ const Container = styled.div`
       opacity: 0;
     }
   }
+
+  .button {
+    margin-bottom: 0;
+  }
 `
 
 const Padding = styled.div`
@@ -100,7 +104,7 @@ class OrderItem extends React.PureComponent {
           </h3>
           <button
             onClick={this.props.onRemove}
-            className="btn btn-block btn-danger"
+            className="btn-block button"
           >
             ปิดออเดอร์
           </button>

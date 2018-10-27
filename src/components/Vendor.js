@@ -84,7 +84,7 @@ const ButtonGroup = styled.div`
 
 class Vendor extends React.Component {
   state = {
-    selected: true,
+    selected: this.props.selected,
     prompt: false,
   }
 
