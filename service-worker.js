@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.2/workbox-sw.js");
 
 importScripts(
-  "/isellfood/precache-manifest.44a5aab5b25f150e045853a327e0276b.js"
+  "/isellfood/precache-manifest.361c272fede341d5c0523ba7917fb0aa.js"
 );
 
 workbox.clientsClaim();

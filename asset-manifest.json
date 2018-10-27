@@ -1,6 +1,6 @@
 {
-  "main.js": "/isellfood/static/js/main.4a38c7fb.chunk.js",
-  "main.js.map": "/isellfood/static/js/main.4a38c7fb.chunk.js.map",
+  "main.js": "/isellfood/static/js/main.71800341.chunk.js",
+  "main.js.map": "/isellfood/static/js/main.71800341.chunk.js.map",
   "static/css/1.c5e1c8cd.chunk.css": "/isellfood/static/css/1.c5e1c8cd.chunk.css",
   "static/js/1.84ae380c.chunk.js": "/isellfood/static/js/1.84ae380c.chunk.js",
   "static/js/1.84ae380c.chunk.js.map": "/isellfood/static/js/1.84ae380c.chunk.js.map",
@@ -8,6 +8,6 @@
   "runtime~main.js.map": "/isellfood/static/js/runtime~main.1a027651.js.map",
   "static/css/1.c5e1c8cd.chunk.css.map": "/isellfood/static/css/1.c5e1c8cd.chunk.css.map",
   "index.html": "/isellfood/index.html",
-  "precache-manifest.44a5aab5b25f150e045853a327e0276b.js": "/isellfood/precache-manifest.44a5aab5b25f150e045853a327e0276b.js",
+  "precache-manifest.361c272fede341d5c0523ba7917fb0aa.js": "/isellfood/precache-manifest.361c272fede341d5c0523ba7917fb0aa.js",
   "service-worker.js": "/isellfood/service-worker.js"
 }
