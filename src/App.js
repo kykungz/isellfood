@@ -6,9 +6,10 @@ import { createGlobalStyle } from 'styled-components'
 const GlobalStyle = createGlobalStyle`
   body {
     background: #e0e0e0;
+    padding: 0;
+    margin: 0;
   }
 `
-
 
 class App extends Component {
   render() {

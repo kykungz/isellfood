@@ -9,6 +9,8 @@ const Container = styled.div`
   }
 `
 
+let count = 1
+
 const foodMock = [
   {
     image:
@@ -36,7 +38,7 @@ const generateOrder = () => ({
   icon: Object.values(icons)[
     parseInt(Math.random() * Object.keys(icons).length)
   ],
-  quantity: parseInt(Math.random() * 10),
+  quantity: parseInt(Math.random() * 9) + 1,
 })
 
 class Order extends React.PureComponent {

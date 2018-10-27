@@ -2,10 +2,20 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Container = styled.div`
-  box-shadow: 0 0 16px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
   background: white;
   display: flex;
+  animation: Fadein 2s;
+
+  @keyframes Fadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 `
 
 const Padding = styled.div`
