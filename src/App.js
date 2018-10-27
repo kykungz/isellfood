@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Link } from 'react-router-dom'
+import { HashRouter as Router, Link } from 'react-router-dom'
 import RouterView from './router'
 import { createGlobalStyle } from 'styled-components'
 import styled from 'styled-components'
