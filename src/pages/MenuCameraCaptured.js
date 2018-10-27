@@ -22,6 +22,9 @@ class MenuCameraCaptured extends React.Component {
             <span>฿ 25</span>
           </li>
         </ul>
+        <div className="bottom-button-wrapper">
+          <a href="/food-camera" className="capture-button">ถ่ายรูปอาหาร</a>
+        </div>
       </div>
     )
   }
