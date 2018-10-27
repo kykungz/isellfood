@@ -23,7 +23,7 @@ const Container = styled.div`
   }
 
   &.removing {
-    animation: Fadeout 0.8s;
+    animation: Fadeout 0.4s;
   }
   @keyframes Fadeout {
     from {

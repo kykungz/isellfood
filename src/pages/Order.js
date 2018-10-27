@@ -99,7 +99,7 @@ class Order extends React.PureComponent {
       this.setState({
         orders: this.state.orders.filter(order => order.orderNum !== orderNum),
       })
-    }, 800)
+    }, 400)
   }
   render() {
     return (
