@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { HashRouter as Router, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Link } from 'react-router-dom'
 import RouterView from './router'
 import { createGlobalStyle } from 'styled-components'
 import styled from 'styled-components'
@@ -77,7 +77,7 @@ class App extends Component {
           {!this.state.splash && (
             <>
               <Header>
-                <Link to="/">
+                <Link to="/order">
                   <img
                     src="/images/logo.png"
                     width="30px"
