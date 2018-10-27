@@ -1,0 +1,149 @@
+
+.menu-list {
+    margin: 0;
+    padding: 0;
+}
+.menu-list li {
+    overflow: hidden;
+    padding: 5px 10px;
+    background-color: #eee;
+    margin: 10px 0;
+    list-style: none;
+}
+.menu-list.button-style li {
+    padding: 0;
+}
+.menu-list button {
+    border: 0;
+    background: transparent;
+    padding: 5px 10px;
+    width: 100%;
+    display: block;
+}
+.menu-list button:focus {
+    background: #ccc;
+    outline: 0;
+}
+.menu-list strong {
+    width: 80%;
+    float: left;
+    text-align: left;
+}
+.menu-list span {
+    width: 20%;
+    float: left;
+    text-align: right;
+}
+.bottom-button-wrapper {
+    position: absolute;
+    left: 50%;
+    text-align: center;
+    z-index: 20;
+    position: fixed;
+    bottom: 10px;
+    margin-left: -30px;
+}
+.capture-button {
+    padding: 10px;
+    background: #666 url(/images/camera.svg) center 15px no-repeat;
+    background-size: 27px auto;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: block;
+    margin: 0 auto;
+    text-indent: -9999px;
+}
+.capture-button:focus {
+    background-color: #000;
+    outline: 0;
+}
+button:focus {
+    outline: 0;
+}
+.image-label {
+    position: absolute;
+    top: 55%;
+    right: 15%;
+    background: rgba(0,0,0,0.5);
+    padding: 5px 10px;
+    font-size: 18px;
+    border: 0;
+    border-radius: 4px;
+    color: #fff;
+}
+.image-label:focus {
+    outline: 0;
+}
+.small-heading {
+    font-size: 16px;
+    margin: 20px 0;
+}
+.navigation {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 0 20px 3px rgba(0,0,0,0.05);
+}
+.menu-item {
+    padding: 0 10px;
+    display: inline-block;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: bold;
+    color: #888;
+}
+.menu-item img {
+    width: 25px;
+    height: auto;
+    display: block;
+    margin: 10px auto 0 auto;
+}
+.menu-item:focus,
+.menu-item:visited {
+    text-decoration: none;
+}
+input:focus {
+    outline-color: #ccc;
+}
+.button {
+    display: inline-block;
+    padding: 7px 30px;
+    background: #543492;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    margin-bottom: 15px;
+    text-decoration: none;
+    border: 0;
+}
+.button:hover,
+.button:visited,
+.button:focus{
+    color: #fff;
+    text-decoration: none;
+    outline: 0;
+}
+.delay-in {
+    animation: Fadein 4s;
+}
+
+@keyframes Fadein {
+  0% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+h3.heading {
+    padding-top: 20px;
+}
