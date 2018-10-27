@@ -82,7 +82,7 @@ class FoodCamera extends React.Component {
           {(this.state.showMenu &&
             <div style={{
               position: 'absolute',
-              top: 0,
+              top: 33,
               left: 0,
               bottom: 0,
               right: 0,

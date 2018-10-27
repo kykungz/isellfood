@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Link } from 'react-router-dom'
 import RouterView from './router'
 import { createGlobalStyle } from 'styled-components'
 import styled from 'styled-components'
+import Clock from './components/Clock'
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -26,31 +27,6 @@ const Header = styled.header`
 `;
 
 class App extends Component {
-  state = {
-    currentTime: ''
-  }
-
-  startTime = () => {
-    let today = new Date()
-    let h = today.getHours()
-    let m = today.getMinutes()
-    let s = today.getSeconds()
-    m = this.checkTime(m)
-    s = this.checkTime(s)
-    this.setState({
-      currentTime: h + ":" + m + ":" + s
-    })
-    let t = setTimeout(this.startTime, 500)
-  }
-
-  componentDidMount = () => {
-    this.startTime()
-  }
-  
-  checkTime = (i) => {
-    if (i < 10) {i = "0" + i}  // add zero in front of numbers < 10
-    return i
-  }
 
   render() {
     return (
@@ -71,7 +47,7 @@ class App extends Component {
               display: 'block',
               marginTop: 3
             }}>
-              <i className="far fa-clock" style={{fontSize: '16px'}}></i>&nbsp; {this.state.currentTime}
+              <i className="far fa-clock" style={{fontSize: '16px'}}></i>&nbsp; <Clock></Clock>
             </span>
           </Header>
           <GlobalStyle />

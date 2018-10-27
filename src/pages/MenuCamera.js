@@ -8,10 +8,6 @@ class MenuCamera extends React.Component {
 
   componentWillUnmount = () => {}
 
-  goTo = (path) => {
-    // this.props.history.push(path)
-  }
-
   render() {
     return (
       <div style={{ overflow: 'hidden', width: '100%', height: '100%' }}>
