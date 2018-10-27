@@ -1,0 +1,66 @@
+body {
+    padding: 20px;
+}
+.menu-list {
+    margin: 0;
+    padding: 0;
+}
+.menu-list li {
+    overflow: hidden;
+    padding: 5px 10px;
+    background-color: #eee;
+    margin: 10px 0;
+    list-style: none;
+}
+.menu-list.button-style li {
+    padding: 0;
+}
+.menu-list button {
+    border: 0;
+    background: transparent;
+    padding: 5px 10px;
+    width: 100%;
+}
+.menu-list button:focus {
+    background: #ccc;
+    outline: 0;
+}
+.menu-list strong {
+    width: 80%;
+    float: left;
+    text-align: left;
+}
+.menu-list span {
+    width: 20%;
+    float: left;
+    text-align: right;
+}
+.bottom-button-wrapper {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+.capture-button {
+    background: #ddd;
+    padding: 10px;
+}
+.image-label {
+    position: absolute;
+    top: 55%;
+    right: 15%;
+    background: rgba(0,0,0,0.5);
+    padding: 5px 10px;
+    font-size: 12px;
+    border: 0;
+    border-radius: 4px;
+    color: #fff;
+}
+.image-label:focus {
+    outline: 0;
+}
+.small-heading {
+    font-size: 16px;
+    margin: 20px 0;
+}

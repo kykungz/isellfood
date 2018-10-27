@@ -12,10 +12,11 @@ class MenuCamera extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1>Menu Camera</h1>
-        <Webcam />
-        <a href="/menu-camera-captured">Capture</a>
+      <div style={{ overflow: 'hidden', width: '100%', height: '100%' }}>
+        <Webcam width="100%" height="600" />
+        <div className="bottom-button-wrapper">
+          <a href="/menu-camera-captured" className="capture-button">Capture</a>
+        </div>
       </div>
     )
   }
