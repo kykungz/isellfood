@@ -1,5 +1,6 @@
 import React from 'react'
 import Vendor from '../components/Vendor'
+import ScgPackagingForm from '../components/ScgPackagingForm'
 import styled from 'styled-components'
 import icons from '../assets/icons'
 
@@ -7,6 +8,7 @@ const vendors = [
   {
     name: 'Food Panda',
     icon: icons.foodpanda,
+    details: 'ในการเชื่อมต่อร้านค้า คุณต้องเสียค่าธรรมเนียม 30% ของราคาอาหารให้กับ Food Panda'
   },
   {
     name: 'Grab Food',
@@ -43,11 +45,15 @@ class Management extends React.PureComponent {
 
   render() {
     return (
-      <Grid>
-        {vendors.map(vendor => (
-          <Vendor {...vendor} />
-        ))}
-      </Grid>
+      <div>
+        <Grid>
+          {vendors.map(vendor => (
+            <Vendor {...vendor} />
+          ))}
+        </Grid>
+        <br /><br />
+        <ScgPackagingForm />
+      </div>
     )
   }
 }

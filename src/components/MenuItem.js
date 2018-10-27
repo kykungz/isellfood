@@ -6,6 +6,7 @@ const Container = styled.div`
   border-radius: 8px;
   display: flex;
   margin: 1em 0;
+  background: #fff;
   &.container-fade {
     animation: Fadein 2s;
   }
@@ -115,7 +116,7 @@ class MenuItem extends React.Component {
         </Detail>
       </Padding>
     )
-    if (this.props.blank == true) {
+    if (this.props.blank === true) {
       content = (
         <Padding>
           {image}

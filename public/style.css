@@ -130,14 +130,17 @@ input:focus {
     text-decoration: none;
 }
 .delay-in {
-    animation: Fadein 2s;
+    animation: Fadein 4s;
 }
 
 @keyframes Fadein {
-  from {
+  0% {
     opacity: 0;
   }
-  to {
+  80% {
+    opacity: 0;
+  }
+  100% {
     opacity: 1;
   }
 }
