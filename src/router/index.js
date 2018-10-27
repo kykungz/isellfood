@@ -4,6 +4,7 @@ import { Route } from 'react-router-dom'
 import Home from '../pages/Home'
 import MenuCamera from '../pages/MenuCamera'
 import MenuCameraCaptured from '../pages/MenuCameraCaptured'
+import Management from '../pages/Management'
 
 const routes = [
   {
@@ -20,7 +21,12 @@ const routes = [
     path: '/menu-camera-captured',
     exact: true,
     component: MenuCameraCaptured
-  }
+  },
+  {
+    path: '/manage',
+    exact: true,
+    component: Management,
+  },
 ]
 
 export default () => (
