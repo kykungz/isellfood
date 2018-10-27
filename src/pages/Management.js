@@ -1,47 +1,53 @@
 import React from 'react'
 import Vendor from '../components/Vendor'
+import styled from 'styled-components'
+import icons from '../assets/icons'
 
 const vendors = [
   {
     name: 'Food Panda',
-    icon:
-      'https://pbs.twimg.com/profile_images/925647521254379520/4UhQZh47_400x400.jpg',
+    icon: icons.foodpanda,
   },
   {
-    name: 'Food Panda',
-    icon:
-      'https://pbs.twimg.com/profile_images/925647521254379520/4UhQZh47_400x400.jpg',
+    name: 'Grab Food',
+    icon: icons.grab,
   },
   {
-    name: 'Food Panda',
-    icon:
-      'https://pbs.twimg.com/profile_images/925647521254379520/4UhQZh47_400x400.jpg',
+    name: 'LINE Man',
+    icon: icons.line,
   },
   {
-    name: 'Food Panda',
-    icon:
-      'https://pbs.twimg.com/profile_images/925647521254379520/4UhQZh47_400x400.jpg',
+    name: 'Skootar',
+    icon: icons.skootar,
   },
   {
-    name: 'Food Panda',
-    icon:
-      'https://pbs.twimg.com/profile_images/925647521254379520/4UhQZh47_400x400.jpg',
+    name: 'Send Ranger',
+    icon: icons.ranger,
   },
   {
-    name: 'Food Panda',
-    icon:
-      'https://pbs.twimg.com/profile_images/925647521254379520/4UhQZh47_400x400.jpg',
+    name: 'Lalamove',
+    icon: icons.lalamove,
   },
 ]
 
+const Grid = styled.div`
+  margin: 1em;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1em 0;
+  max-width: 400px;
+`
+
 class Management extends React.PureComponent {
+  state = {}
+
   render() {
     return (
-      <div>
+      <Grid>
         {vendors.map(vendor => (
           <Vendor {...vendor} />
         ))}
-      </div>
+      </Grid>
     )
   }
 }

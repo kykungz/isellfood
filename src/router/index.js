@@ -3,6 +3,7 @@ import { Route } from 'react-router-dom'
 
 import Home from '../pages/Home'
 import Management from '../pages/Management'
+import Order from '../pages/Order'
 
 const routes = [
   {
@@ -14,6 +15,11 @@ const routes = [
     path: '/manage',
     exact: true,
     component: Management,
+  },
+  {
+    path: '/order',
+    exact: true,
+    component: Order,
   },
 ]
 
