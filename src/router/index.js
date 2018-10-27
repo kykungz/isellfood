@@ -2,6 +2,8 @@ import React from 'react'
 import { Route } from 'react-router-dom'
 
 import Home from '../pages/Home'
+import MenuCamera from '../pages/MenuCamera'
+import MenuCameraCaptured from '../pages/MenuCameraCaptured'
 import Management from '../pages/Management'
 import Order from '../pages/Order'
 
@@ -10,6 +12,16 @@ const routes = [
     path: '/',
     exact: true,
     component: Home,
+  },
+  {
+    path: '/menu-camera',
+    exact: true,
+    component: MenuCamera
+  },
+  {
+    path: '/menu-camera-captured',
+    exact: true,
+    component: MenuCameraCaptured
   },
   {
     path: '/manage',
