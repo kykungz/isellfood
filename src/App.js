@@ -62,7 +62,7 @@ class App extends Component {
       this.setState({
         splash: false,
       })
-    }, 0)
+    }, 3000)
   }
 
   render() {
