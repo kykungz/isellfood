@@ -1,5 +1,4 @@
 body {
-    padding: 20px;
 }
 .menu-list {
     margin: 0;
@@ -20,6 +19,7 @@ body {
     background: transparent;
     padding: 5px 10px;
     width: 100%;
+    display: block;
 }
 .menu-list button:focus {
     background: #ccc;
@@ -43,8 +43,18 @@ body {
     text-align: center;
 }
 .capture-button {
-    background: #ddd;
     padding: 10px;
+    background: #666 url(/images/camera.svg) center 15px no-repeat;
+    background-size: 27px auto;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: block;
+    margin: 0 auto;
+    text-indent: -9999px;
+}
+.capture-button:focus {
+    background-color: #000;
 }
 .image-label {
     position: absolute;
