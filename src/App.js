@@ -77,7 +77,7 @@ class App extends Component {
           {!this.state.splash && (
             <>
               <Header>
-                <Link to="/order">
+                <Link to="/">
                   <img
                     src="/images/logo.png"
                     width="30px"
