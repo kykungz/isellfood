@@ -1,12 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const Block = styled.div`
-`
+const Block = styled.div``
 
 const ImageContainer = styled.div`
   background: white;
-  margin: 0 1em;
+  margin: 0.5em;
   margin-bottom: 0.25em;
   position: relative;
 
@@ -15,7 +14,7 @@ const ImageContainer = styled.div`
   }
 
   > img {
-    box-shadow: 0 0 16px rgba(0,0,0,0.4);
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.4);
     border-radius: 16px;
     width: 100%;
     box-sizing: border-box;
@@ -28,7 +27,7 @@ const ImageContainer = styled.div`
   i {
     position: absolute;
     font-size: 15px;
-    color: rgba(255,255,255,0.7);
+    color: rgba(255, 255, 255, 0.7);
     right: 7px;
     top: 5px;
   }
@@ -44,9 +43,9 @@ const Popup = styled.div`
   top: 0;
   left: 0;
   bottom: 0;
-  right :0;
+  right: 0;
   z-index: 10;
-  background: rgba(0,0,0,0.8);
+  background: rgba(0, 0, 0, 0.8);
   .popup-container {
     position: absolute;
     top: 50%;
@@ -75,7 +74,7 @@ const ButtonGroup = styled.div`
     float: left;
     padding: 10px;
     &:focus {
-      outline :0;
+      outline: 0;
     }
     &:first-child {
       border-right: 1px solid #ddd;
@@ -86,20 +85,20 @@ const ButtonGroup = styled.div`
 class Vendor extends React.Component {
   state = {
     selected: true,
-    prompt: false
+    prompt: false,
   }
 
   confirm = () => {
     this.setState({
       prompt: false,
-      selected: true
+      selected: true,
     })
   }
 
   deny = () => {
     this.setState({
       prompt: false,
-      selected: false
+      selected: false,
     })
   }
 
@@ -107,11 +106,12 @@ class Vendor extends React.Component {
     // activate --> show prompt only when there is some message
     if (!this.state.selected && this.props.details) {
       this.setState({
-        prompt: true
+        prompt: true,
       })
-    } else { // deactivate
+    } else {
+      // deactivate
       this.setState({
-        selected: !this.state.selected
+        selected: !this.state.selected,
       })
     }
   }
@@ -122,27 +122,27 @@ class Vendor extends React.Component {
         <Block onClick={this.toggle}>
           <ImageContainer className={this.state.selected ? '' : 'grey'}>
             <img src={this.props.icon} alt="" />
-            {this.state.selected && 
-              <i className="fas fa-check-circle"></i>
-            }
+            {this.state.selected && <i className="fas fa-check-circle" />}
           </ImageContainer>
           <Name>{this.props.name}</Name>
         </Block>
-        {this.state.prompt && this.props.details &&
-          <Popup>
-            <div className="popup-container">
-              <p>
-                {this.props.details}
-              </p>
-              <ButtonGroup>
-                <button className="confirm-button" onClick={this.confirm}>ตกลง</button>
-                <button className="deny-button" onClick={this.deny}>ยกเลิก</button>
-              </ButtonGroup>
-            </div>
-            <div className="overlay"></div>
-          </Popup>
-        }
-      
+        {this.state.prompt &&
+          this.props.details && (
+            <Popup>
+              <div className="popup-container">
+                <p>{this.props.details}</p>
+                <ButtonGroup>
+                  <button className="confirm-button" onClick={this.confirm}>
+                    ตกลง
+                  </button>
+                  <button className="deny-button" onClick={this.deny}>
+                    ยกเลิก
+                  </button>
+                </ButtonGroup>
+              </div>
+              <div className="overlay" />
+            </Popup>
+          )}
       </div>
     )
   }
