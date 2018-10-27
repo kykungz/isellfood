@@ -7,7 +7,6 @@ import Clock from './components/Clock'
 
 const GlobalStyle = createGlobalStyle`
   body {
-    background: #e0e0e0;
     padding: 0;
     margin: 54px 0 80px 0 !important;
     min-height: 100%;
