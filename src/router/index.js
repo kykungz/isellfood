@@ -1,18 +1,26 @@
 import React from 'react'
 import { Route } from 'react-router-dom'
 
-import Home from '../pages/Home'
+import Stats from '../pages/Stats'
 import MenuCamera from '../pages/MenuCamera'
-import MenuCameraCaptured from '../pages/MenuCameraCaptured'
+import MenuAdded from '../pages/MenuAdded'
+import MenuAddedConfirm from '../pages/MenuAddedConfirm'
+import MenuAdded2 from '../pages/MenuAdded2'
 import FoodCamera from '../pages/FoodCamera'
 import Management from '../pages/Management'
 import Order from '../pages/Order'
+import Menu from '../pages/Menu'
 
 const routes = [
   {
     path: '/',
     exact: true,
-    component: Home,
+    component: Stats,
+  },
+  {
+    path: '/menu',
+    exact: true,
+    component: Menu
   },
   {
     path: '/menu-camera',
@@ -20,9 +28,19 @@ const routes = [
     component: MenuCamera
   },
   {
-    path: '/menu-camera-captured',
+    path: '/menu-added',
     exact: true,
-    component: MenuCameraCaptured
+    component: MenuAdded
+  },
+  {
+    path: '/menu-added-confirm',
+    exact: true,
+    component: MenuAddedConfirm
+  },
+  {
+    path: '/menu-added2',
+    exact: true,
+    component: MenuAdded2
   },
   {
     path: '/food-camera',

@@ -9,8 +9,6 @@ const Container = styled.div`
   }
 `
 
-let count = 1
-
 const foodMock = [
   {
     image:

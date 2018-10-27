@@ -16,6 +16,9 @@ const ImageContainer = styled.div`
     width: 100%;
     box-sizing: border-box;
   }
+  &.grey img {
+    filter: grayscale(100%);
+  }
 `
 
 const Name = styled.div`
@@ -23,15 +26,21 @@ const Name = styled.div`
   font-size: 14px;
 `
 
-class Vendor extends React.PureComponent {
+class Vendor extends React.Component {
   state = {
-    selected: false,
+    selected: true,
+  }
+
+  toggle = () => {
+    this.setState({
+      selected: !this.state.selected
+    })
   }
 
   render() {
     return (
-      <Block>
-        <ImageContainer>
+      <Block onClick={this.toggle}>
+        <ImageContainer className={this.state.selected ? '' : 'grey'}>
           <img src={this.props.icon} alt="" />
         </ImageContainer>
         <Name>{this.props.name}</Name>

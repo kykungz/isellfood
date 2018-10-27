@@ -1,12 +1,33 @@
 import React from 'react'
 import Webcam from 'react-webcam'
 import Loader from './../components/Loader'
+import MenuItem from '../components/MenuItem'
 
 class FoodCamera extends React.Component {
   state = {
     captured: false,
     showMenu: false,
-    loading: false
+    loading: false,
+    menu: [
+      {
+        image:
+          '/images/no-img.png',
+        title: 'ข้าวกระเพราหมู',
+        price: '45'
+      },
+      {
+        image:
+          '/images/no-img.png',
+        title: 'ข้าวกระเพราไก่',
+        price: '45'
+      },
+      {
+        image:
+          '/images/no-img.png',
+        title: 'ข้าวผัดกะเพราปลาหมึก',
+        price: '60'
+      }
+    ]
   }
 
   setWebcamRef = webcam => {
@@ -23,12 +44,11 @@ class FoodCamera extends React.Component {
       loading: true,
       capturedImage: this.webcam.getScreenshot()
     })
-    let $this = this;
-    setTimeout(function(){ 
+    setTimeout(() => {
       this.setState({
         loading: false
       })
-    }.bind(this), 3000)
+    }, 1000)
 
   }
 
@@ -36,6 +56,10 @@ class FoodCamera extends React.Component {
     this.setState({
       showMenu: true
     })
+  }
+
+  selectFood = () => {
+    this.props.history.push('/menu-added2')
   }
 
   render() {
@@ -51,7 +75,7 @@ class FoodCamera extends React.Component {
             }
             {(!this.state.loading && !this.state.showMenu &&
               <button className="image-label" onClick={this.showMenu}>
-                ข้าวกระเพราหมู (฿ 30) <i className="fas fa-times-circle"></i>
+                ข้าวกระเพรา <i className="fas fa-times-circle"></i>
               </button>
             )}
           </div>
@@ -65,21 +89,11 @@ class FoodCamera extends React.Component {
               background: 'rgba(255,255,255,0.8)',
               padding: 20
             }}>
-              <h3 className="small-heading">เลือกเมนูอาหาร</h3>
-              <ul className="menu-list button-style">
-                <li>
-                  <button>
-                    <strong>ข้าวกระเพราหมูสับ</strong>
-                    <span>฿ 30</span>
-                  </button>
-                </li>
-                <li>
-                  <button>
-                    <strong>ข้าวไข่เจียว</strong>
-                    <span>฿ 25</span>
-                  </button>
-                </li>
-              </ul>
+              <h3 className="heading">เลือกเมนูอาหาร</h3>
+              {this.state.menu.map((food, i) => (
+                <MenuItem {...food} key={i} onClick={this.selectFood} />
+              ))}
+              <MenuItem blank={true} />
             </div>
           )}
         </div>

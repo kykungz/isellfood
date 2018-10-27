@@ -1,4 +1,6 @@
 body {
+    min-height: 100%;
+    margin-bottom: 80px!important;
 }
 .menu-list {
     margin: 0;
@@ -37,10 +39,12 @@ body {
 }
 .bottom-button-wrapper {
     position: absolute;
-    bottom: 20px;
-    left: 0;
-    right: 0;
+    left: 50%;
     text-align: center;
+    z-index: 20;
+    position: fixed;
+    bottom: 10px;
+    margin-left: -30px;
 }
 .capture-button {
     padding: 10px;
@@ -55,6 +59,10 @@ body {
 }
 .capture-button:focus {
     background-color: #000;
+    outline: 0;
+}
+button:focus {
+    outline: 0;
 }
 .image-label {
     position: absolute;
@@ -62,7 +70,7 @@ body {
     right: 15%;
     background: rgba(0,0,0,0.5);
     padding: 5px 10px;
-    font-size: 12px;
+    font-size: 18px;
     border: 0;
     border-radius: 4px;
     color: #fff;
@@ -73,4 +81,63 @@ body {
 .small-heading {
     font-size: 16px;
     margin: 20px 0;
+}
+.navigation {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 0 20px 3px rgba(0,0,0,0.05);
+}
+.menu-item {
+    padding: 0 10px;
+    display: inline-block;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: bold;
+    color: #888;
+}
+.menu-item img {
+    width: 25px;
+    height: auto;
+    display: block;
+    margin: 10px auto 0 auto;
+}
+.menu-item:focus,
+.menu-item:visited {
+    text-decoration: none;
+}
+input:focus {
+    outline-color: #ccc;
+}
+.button {
+    display: inline-block;
+    padding: 7px 30px;
+    background: #0FD1AC;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 15px;
+    text-decoration: none;
+}
+.button:hover,
+.button:visited{
+    color: #fff;
+    text-decoration: none;
+}
+.delay-in {
+    animation: Fadein 2s;
+}
+
+@keyframes Fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

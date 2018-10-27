@@ -1,8 +1,8 @@
 import React from 'react'
 
-class Home extends React.Component {
+class Stats extends React.Component {
   state = {
-    msg: 'Home',
+    msg: 'Stats',
   }
 
   componentDidMount = () => {}
@@ -18,4 +18,4 @@ class Home extends React.Component {
   }
 }
 
-export default Home
+export default Stats

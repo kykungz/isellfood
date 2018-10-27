@@ -1,14 +1,16 @@
 import React from 'react'
-import Webcam from "react-webcam";
+import Webcam from "react-webcam"
+import { Link } from 'react-router-dom'
 
 class MenuCamera extends React.Component {
-  state = {
-    msg: 'cam',
-  }
 
   componentDidMount = () => {}
 
   componentWillUnmount = () => {}
+
+  goTo = (path) => {
+    // this.props.history.push(path)
+  }
 
   render() {
     return (
@@ -26,7 +28,7 @@ class MenuCamera extends React.Component {
           width="100%" 
           height="100%" />
         <div className="bottom-button-wrapper">
-          <a href="/menu-camera-captured" className="capture-button">Capture</a>
+          <Link to="/menu-added-confirm" className="capture-button">Capture</Link>
         </div>
       </div>
     )
