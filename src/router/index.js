@@ -57,6 +57,11 @@ const routes = [
     exact: true,
     component: Order,
   },
+  {
+    path: '/stats',
+    exact: true,
+    component: Stats
+  },
 ]
 
 export default () => (
