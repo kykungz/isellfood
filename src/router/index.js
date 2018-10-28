@@ -4,7 +4,6 @@ import { Route } from 'react-router-dom'
 import Stats from '../pages/Stats'
 import MenuCamera from '../pages/MenuCamera'
 import MenuAdded from '../pages/MenuAdded'
-import MenuAddedConfirm from '../pages/MenuAddedConfirm'
 import MenuAdded2 from '../pages/MenuAdded2'
 import FoodCamera from '../pages/FoodCamera'
 import Management from '../pages/Management'
@@ -31,11 +30,6 @@ const routes = [
     path: '/menu-added',
     exact: true,
     component: MenuAdded
-  },
-  {
-    path: '/menu-added-confirm',
-    exact: true,
-    component: MenuAddedConfirm
   },
   {
     path: '/menu-added2',

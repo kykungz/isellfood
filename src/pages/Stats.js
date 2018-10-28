@@ -15,9 +15,16 @@ const StatNumber = styled.div`
   }
 `
 
+const Chart = styled.div`
+  img {
+    max-width: 350px;
+    display: block;
+    margin: 0 auto;
+  }
+`
+
 class Stats extends React.Component {
   state = {
-    msg: 'Stats',
   }
 
   componentDidMount = () => {}
@@ -31,7 +38,7 @@ class Stats extends React.Component {
         <div className="row">
           <div className="col">
             <StatNumber style={{ background: 'rgb(73, 189, 204)'}}>
-              <span>จำนวนยอดขาย</span>
+              <span>ออเดอร์</span>
               <strong>125</strong>
               
             </StatNumber>
@@ -43,7 +50,10 @@ class Stats extends React.Component {
             </StatNumber>
           </div>
         </div>
-        <img src="/images/graph.png" width="100%" height="auto" alt="" />
+        <br />
+        <Chart>
+          <img src="/images/graph.png" width="100%" height="auto" alt="" />
+        </Chart>
       </div>
     )
   }

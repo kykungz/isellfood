@@ -1,8 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const SizeSelection = styled.p`
+const SizeSelection = styled.div`
   overflow: hidden;
+  margin-bottom: 20px;
+  margin-top: 20px;
   strong {
     float: left;
   }

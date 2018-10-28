@@ -2,7 +2,6 @@ import React from 'react'
 import Webcam from 'react-webcam'
 import Loader from './../components/Loader'
 import MenuItem from '../components/MenuItem'
-import Popup from './../components/Popup'
 const axios = require('axios')
 
 class FoodCamera extends React.Component {
@@ -41,41 +40,18 @@ class FoodCamera extends React.Component {
   componentWillUnmount = () => {}
 
   capture = () => {
+    let screenshot = this.webcam.getScreenshot();
     this.setState({
       captured: true,
       loading: true,
-      capturedImage: this.webcam.getScreenshot()
+      capturedImage: screenshot
     })
-    let $this = this;
-    axios.post('https://vision.googleapis.com/v1/images:annotate?key=AIzaSyAaAJZN97w1ga401aWxXhaJD93awAc3jnE', {
-      "requests":[
-        {
-          "image":{
-            "content": this.webcam.getScreenshot().replace('data:image/webp;base64,','')
-          },
-          "features":[
-            {
-              "type":"TEXT_DETECTION"
-            }
-          ]
-        }
-      ]
-      })
-    .then(function (response) {
-      let res = response.data.responses;
-      let textFound = false;
-      if (res && res.length > 0 && res[0].fullTextAnnotation) {
-        textFound = true;
-      }
+    localStorage.setItem('foodImage', screenshot);
+    setTimeout(() => {
       this.setState({
         loading: false,
-        textFound: textFound
       })
-      console.log(response);
-    }.bind(this))
-    .catch(function (error) {
-      console.log(error);
-    });
+    }, 500)
 
   }
 
@@ -109,14 +85,10 @@ class FoodCamera extends React.Component {
             {this.state.loading &&
               <Loader />
             }
-            {(!this.state.loading && !this.state.showMenu && this.state.textFound &&
+            {(!this.state.loading && !this.state.showMenu &&
               <button className="image-label" onClick={this.showMenu}>
                 ข้าวกะเพรา <i className="fas fa-times-circle"></i>
               </button>
-            )}
-            {(!this.state.loading && !this.state.showMenu && !this.state.textFound &&
-              <Popup onConfirm={this.reset} cancelButton={false} content="ไม่ใช่รูปเมนูอาหาร กรุณาถ่ายรูปที่ถูกต้อง">
-              </Popup>
             )}
           </div>
           {(this.state.showMenu &&
