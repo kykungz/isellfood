@@ -74,6 +74,10 @@ class MenuCamera extends React.Component {
       console.log(response);
     }.bind(this))
     .catch(function (error) {
+      this.setState({
+        loading: false,
+        textFound: true
+      })
       console.log(error);
     });
 

@@ -7,7 +7,7 @@ class Loader extends React.PureComponent {
         position: 'absolute',
         top: '50%',
         left: "50%",
-        marginTop: "-75px",
+        marginTop: "-100px",
         marginLeft: "-75px"
 
       }}>
