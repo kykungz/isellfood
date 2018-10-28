@@ -2,6 +2,8 @@ import React from 'react'
 import Webcam from 'react-webcam'
 import Loader from './../components/Loader'
 import MenuItem from '../components/MenuItem'
+import Popup from './../components/Popup'
+const axios = require('axios')
 
 class FoodCamera extends React.Component {
   state = {
@@ -44,11 +46,45 @@ class FoodCamera extends React.Component {
       loading: true,
       capturedImage: this.webcam.getScreenshot()
     })
-    setTimeout(() => {
-      this.setState({
-        loading: false
+    let $this = this;
+    axios.post('https://vision.googleapis.com/v1/images:annotate?key=AIzaSyAaAJZN97w1ga401aWxXhaJD93awAc3jnE', {
+      "requests":[
+        {
+          "image":{
+            "content": this.webcam.getScreenshot().replace('data:image/webp;base64,','')
+          },
+          "features":[
+            {
+              "type":"TEXT_DETECTION"
+            }
+          ]
+        }
+      ]
       })
-    }, 1000)
+    .then(function (response) {
+      let res = response.data.responses;
+      let textFound = false;
+      if (res && res.length > 0 && res[0].fullTextAnnotation) {
+        textFound = true;
+      }
+      this.setState({
+        loading: false,
+        textFound: textFound
+      })
+      console.log(response);
+    }.bind(this))
+    .catch(function (error) {
+      console.log(error);
+    });
+
+  }
+
+  reset = () => {
+    this.setState({
+      captured: false,
+      showMenu: false,
+      loading: false,
+    })
 
   }
 
@@ -73,10 +109,14 @@ class FoodCamera extends React.Component {
             {this.state.loading &&
               <Loader />
             }
-            {(!this.state.loading && !this.state.showMenu &&
+            {(!this.state.loading && !this.state.showMenu && this.state.textFound &&
               <button className="image-label" onClick={this.showMenu}>
-                ข้าวกระเพรา <i className="fas fa-times-circle"></i>
+                ข้าวกะเพรา <i className="fas fa-times-circle"></i>
               </button>
+            )}
+            {(!this.state.loading && !this.state.showMenu && !this.state.textFound &&
+              <Popup onConfirm={this.reset} cancelButton={false} content="ไม่ใช่รูปเมนูอาหาร กรุณาถ่ายรูปที่ถูกต้อง">
+              </Popup>
             )}
           </div>
           {(this.state.showMenu &&
@@ -96,6 +136,9 @@ class FoodCamera extends React.Component {
               <MenuItem blank={true} />
             </div>
           )}
+          <div className="bottom-button-wrapper">
+            <button onClick={this.reset} className="capture-button">Capture</button>
+          </div>
         </div>
       )
     } else {

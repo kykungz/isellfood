@@ -72,6 +72,20 @@ button:focus {
     border-radius: 4px;
     color: #fff;
 }
+.image-label:after {
+	bottom: 100%;
+	left: 20px;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+    background: transparent;
+	border-bottom-color: rgba(0,0,0,0.5);
+	border-width: 7px;
+	margin-left: -9px;
+}
 .image-label:focus {
     outline: 0;
 }
