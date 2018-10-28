@@ -100,7 +100,7 @@ class OrderItem extends React.PureComponent {
           ))}
           <h3 className="d-flex justify-content-between align-items-center text-right p-2">
             <Icon style={{ borderRadius: 0 }} src={this.props.icon} alt="" />
-            {this.props.items.reduce((acc, cur) => acc + cur.price, 0)} บาท
+            {this.props.items.reduce((acc, cur) => acc + (cur.quantity * cur.price), 0)} บาท
           </h3>
           <button
             onClick={this.props.onRemove}

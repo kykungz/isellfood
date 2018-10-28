@@ -29,7 +29,8 @@ class MenuCamera extends React.Component {
         title: 'ข้าวผัดกะเพราปลาหมึก',
         price: '60'
       }
-    ]
+    ],
+    cameraMode: 'environment'
   }
 
   setWebcamRef = webcam => {
@@ -45,7 +46,7 @@ class MenuCamera extends React.Component {
     this.setState({
       captured: true,
       loading: true,
-      capturedImage: screenshot
+      capturedImage: screenshot,
     })
     axios.post('https://vision.googleapis.com/v1/images:annotate?key=AIzaSyAaAJZN97w1ga401aWxXhaJD93awAc3jnE', {
       "requests":[
@@ -81,6 +82,18 @@ class MenuCamera extends React.Component {
       console.log(error);
     });
 
+  }
+
+  toggleCamera = () => {
+    if (this.state.cameraMode === 'environment') {
+      this.setState({
+        cameraMode: 'user'
+      })
+    } else {
+      this.setState({
+        cameraMode: 'environment'
+      })
+    }
   }
 
   reset = () => {
@@ -140,7 +153,7 @@ class MenuCamera extends React.Component {
             videoConstraints={{
               width: 1280,
               height: 720,
-              facingMode: "environment" 
+              facingMode: this.state.cameraMode 
             }}
             style={{
               minWidth: '100%',
@@ -148,6 +161,7 @@ class MenuCamera extends React.Component {
             }}
             width="100%" 
             height="100%" />
+            <button className="toggle-camera" onClick={this.toggleCamera}><i className="fas fa-sync-alt"></i></button>
             <div style={{
               textAlign: 'center'
             }}>

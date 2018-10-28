@@ -45,7 +45,7 @@ const generateLineOrder = (
   return {
     id: Math.random(),
     ...foodMock[index],
-    quantity: parseInt(Math.random() * 9) + 1,
+    quantity: parseInt(Math.random() * 4) + 1,
   }
 }
 
